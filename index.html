@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Máy tính thần thánh</title>
+</head>
+
+<body>
+    <style>
+        label.form-label {
+            font-weight: 500;
+            color: #5c5959;
+        }
+    </style>
+    <div class="container">
+        <h3 class="text-center mt-3" style="color:#253eeb ;">Máy tính Thần Thánh</h3>
+        <div class="form">
+            <div class="mb-3">
+                <label class="form-label" for="age">Mời bạn nhập tuổi của bạn</label>
+                <input id="age" class="form-control" type="number">
+            </div>
+            <div class="mb-3 text-center">
+                <button type="submit" class="btn btn-success" onclick="tinhtuoi()">Tính Tuổi</button>
+            </div>
+            <div class="mb-3" id="age2"></div>
+        </div>
+    </div>
+
+    <script>
+        function tinhtuoi() {
+            var tuoinhap = document.getElementById("age").value;
+
+            if (tuoinhap == "") {
+                document.getElementById("age2").innerHTML = '<div class="alert alert-danger">Nhập tuổi đi em, không nhập sao tính 😿😿😿</div>'
+            } else if (tuoinhap <= 0) {
+                document.getElementById("age2").innerHTML = '<div class="alert alert-danger">Mày ra đời rồi tao tính cho nhé 👌👌👌 </div>'
+            } else if (tuoinhap <= 3) {
+                document.getElementById("age2").innerHTML = '<div class="alert alert-danger">Về Ngâm ti đi con 👶👶👶, tính cái gì </div>'
+            } else if (tuoinhap <= 100) {
+                document.getElementById("age2").innerHTML = '<div class="alert alert-success">Tuổi của bạn là: ' + tuoinhap + ' nhé. quá đỉnh 🤞🤞🤞</div>'
+            } else {
+                document.getElementById("age2").innerHTML = '<div class="alert alert-danger">sống dai thế, chưa đi à 🤔🤔🤔?</div>';
+            }
+        }
+    </script>
+</body>
+
+</html>
